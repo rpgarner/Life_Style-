@@ -1,11 +1,11 @@
 const { model } = require('mongoose')
-const WorkOut = require('./workOut')
-const Review= require('./review')
+const WorkoutSchema = require('./workout')
+const ReviewSchema= require('./review')
 
-const WorkOut = model('workOut', UserSchema)
-const Review = model('review', TaskSchema)
+const Workout = model('workout', WorkoutSchema)
+const Review = model('review', ReviewSchema)
 
 module.exports = {
-  WorkOut,
+  Workout,
   Review
 }
