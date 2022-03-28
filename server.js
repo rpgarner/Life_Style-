@@ -2,7 +2,7 @@
 const express = require("express");
 const cors = require("cors");
 const db = require("./db");
-const { WorkOut, Review } = require("./models");
+const { Workout, Review } = require("./models");
 const logger = require("morgan");
 
 //////// DEFINE VARIABLES /////////////
@@ -20,6 +20,20 @@ app.use(logger("dev"));
 app.get("/", (req, res) => {
   res.send("This is root!");
 });
+app.get("/addWorkout", async (req, res) => {
+    const games = await Game.find({});
+    res.json(games);
+  });
+  
+  app.post("/yourWorkouts", async (req, res) => {
+    const reviews = await Review.find({});
+    res.json(reviews);
+  });
+  
+  app.post("/addWorkout", async (req, res) => {
+    const newReview = await Review.create(req.body);
+    await res.json(newReview);
+  });
 
 
 
