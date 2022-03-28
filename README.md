@@ -1,7 +1,7 @@
 # Life_Style-
-This a full stack app that lets you plan out your life like work outs, diets, and etc...
+This a full stack app that lets you plan out your life  work outs, diets, and goals.
  
- ![trivial Game](https://vir.com.vn/stores/news_dataimages/hung/062020/23/06/1497p16-the-vital-pillars-for-a-healthy-lifestyle.jpg)
+ ![Lifestyle pic](https://vir.com.vn/stores/news_dataimages/hung/062020/23/06/1497p16-the-vital-pillars-for-a-healthy-lifestyle.jpg)
 ## Overview
 
 Starting with workouts the goal of this app is to help you organize workouts, diets, and goals. I dont know about you but I have tried so many work out programs, diet regimets, but they are always temporary, as soon as the program is done it is hard to continue. Lets get really it is hard to plan out your life. We believe that the best porogram is something that fits your life style, easy to maintain/plan, and is a life style that last. This app helps you log all the best work outs meanls... etc. Into one place you can plan your workouts, plan your meals, and plan your life style.
@@ -27,7 +27,7 @@ Starting with workouts the goal of this app is to help you organize workouts, di
 
 ![project building](https://cdn.shopify.com/s/files/1/0070/7032/files/business-plan-template.jpg?v=1559542220&width=1024)
 
-see how we built this game, in our attached Trello board https://trello.com/b/SMoaZu3g/game-board-project
+see how we built this game, in our attached Trello board https://trello.com/b/1JI3LkKO/lifestyle
 
 #### sources
 
@@ -49,7 +49,9 @@ see how we built this game, in our attached Trello board https://trello.com/b/SM
 
 
 
-#### More categories!
+#### Goal plan!
+- explore fun goals 
+- create goals that fit your lifestyle 
 
 
 ### Make you own contributions
