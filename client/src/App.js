@@ -1,4 +1,4 @@
-
+import React from 'react';
 import './styles/App.css';
 import Nav from './components/Nav'
 import Home from './components/Home';
@@ -16,7 +16,7 @@ function App() {
       </header>
       <main>
         <Routes>
-          <Route path='/' elemnt={ <Home /> } />
+          <Route path='/' element={ <Home /> } />
           <Route path='/profile' element={ <Profile /> } /> 
           <Route path='/yourWorkouts' element={ <YourWorkouts />} />
           <Route path='/addWorkout' element={ <AddWorkout />} />
