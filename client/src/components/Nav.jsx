@@ -1,11 +1,14 @@
-
+import { Link } from 'react-router-dom'
 
 const Nav = () => {
   
     return (
-     <div>
-         nav bar
-     </div>
+     <nav>
+        <div>
+            <Link to='/'>Home</Link>
+        </div>
+
+     </nav>
     )
   }
   

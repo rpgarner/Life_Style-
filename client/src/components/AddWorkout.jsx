@@ -1,6 +1,6 @@
 
 
-const CreateWorkout = () => {
+const AddWorkout = () => {
   
   return (
    <div>
@@ -9,4 +9,4 @@ const CreateWorkout = () => {
   )
 }
 
-export default CreateWorkout
+export default AddWorkout
