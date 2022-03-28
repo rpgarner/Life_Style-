@@ -1,2 +1,59 @@
 # Life_Style-
 This a full stack app that lets you plan out your life like work outs, diets, and etc...
+ 
+ ![trivial Game](https://vir.com.vn/stores/news_dataimages/hung/062020/23/06/1497p16-the-vital-pillars-for-a-healthy-lifestyle.jpg)
+## Overview
+
+Starting with workouts the goal of this app is to help you organize workouts, diets, and goals. I dont know about you but I have tried so many work out programs, diet regimets, but they are always temporary, as soon as the program is done it is hard to continue. Lets get really it is hard to plan out your life. We believe that the best porogram is something that fits your life style, easy to maintain/plan, and is a life style that last. This app helps you log all the best work outs meanls... etc. Into one place you can plan your workouts, plan your meals, and plan your life style.
+## Getting Started
+
+- go to your home page here: 
+- vist the your workout page where you can save all your favorite workouts and customize. 
+- go to create a workout page. 
+- explore our preset workouts or make your own 
+
+## tips 
+- use our pre set workouts to help guide you to what works best for you. 
+- modify the workouts to make them better, or delete them and try something different. 
+
+
+# Visit the page Here/ 
+
+- Click here: (place website here)
+  
+  ![Lets Play](https://media4.giphy.com/media/UqZ4imFIoljlr5O2sM/200.gif)
+
+### Project build plan
+
+![project building](https://cdn.shopify.com/s/files/1/0070/7032/files/business-plan-template.jpg?v=1559542220&width=1024)
+
+see how we built this game, in our attached Trello board https://trello.com/b/SMoaZu3g/game-board-project
+
+#### sources
+
+- https://stackoverflow.com/
+- https://www.w3schools.com/css/css3_buttons.asp
+
+#### Tools used
+-   Html, css, and java scripts 
+-   Front end React
+-   Back end express, node.js, mongodb, mongoose,  
+
+
+## Coming soon!
+
+#### Deit plans 
+-   plan out your week with meal plans.
+-   follow a preset diet. 
+-   ultimately customize your diet to make it work for you.
+
+
+
+#### More categories!
+
+
+### Make you own contributions
+  - Fork and Clone this repo
+  - Open the repo in VS Code with `code .`
+  - save by `git add .`, `git commit -m ''`, and push to your fork `git push origin main`
+  - make a pull request and share your additions
