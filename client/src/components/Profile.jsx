@@ -4,7 +4,10 @@ const Profile = () => {
   
     return (
      <div>
-         Create workout page 
+         <h1>Profile</h1>
+        <div>Workouts</div>
+        <div>Diets</div>
+        <div>Goals</div>
      </div>
     )
   }
