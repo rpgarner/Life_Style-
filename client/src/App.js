@@ -6,6 +6,8 @@ import { Routes, Route } from 'react-router-dom'
 import Profile from './components/Profile'
 import YourWorkouts from './components/YourWorkouts';
 import AddWorkout from './components/AddWorkout';
+import { useEffect, useState} from 'react';
+import axios from 'axios';
 
 
 function App() {
