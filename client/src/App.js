@@ -11,6 +11,33 @@ import axios from 'axios';
 
 
 function App() {
+  const [workouts, setWorkouts] = useState([])
+  const [reviews, setReviews] = useState([])
+
+  useEffect(() => {
+    async function getWorkouts() {
+      try {
+        let res = await axios.get(`http://localhost:3001/yourWorkouts`);
+        console.log(res)
+        setWorkouts(res.data);
+        
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    getWorkouts();
+
+    async function getReviews() {
+      try {
+        let res = await axios.get(`http://localhost:3001/yourWorkouts`);
+        setReviews(res.data);
+        console.log(res);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    getReviews();
+  }, []);
   return (
     <div className="App">
       <header className="App-header">
