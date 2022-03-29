@@ -25,21 +25,32 @@ app.get("/", (req, res) => {
 // app.post("/addWorkout", async (req, res) => {
 //     const workouts = await Workout.find({});
 //     res.json(workouts);
-//   });
-  
+//   });  
+
   app.get("/yourWorkouts", async (req, res) => {
-    const reviews = await Workout.find({});
-    res.json(reviews);
+    const workouts = await Workout.find({});
+    res.json(workouts);
   });
   
-  app.post("/YourWorkout", async (req, res) => {
-    const newReview = await Review.create(req.body);
-    await res.json(newReview);
-  });
+  // app.post("/YourWorkout", async (req, res) => {
+  //   const newReview = await Review.create(req.body);
+  //   await res.json(newReview);
+  // });
   
+  app.get("/yourWorkouts/:id", async (req, res) => {
+    const {id} = req.params;
+    let foundWorkout = await Workout.findById(id).populate('reviews')
+    res.json(foundWorkout)
+  })
+
   app.put("/yourWorkouts/:id", async (req, res) => {
       const {id} = req.params;
-       await Workout.findByIdAndUpdate(id, req.body, { new: true }).populate('reviews')
+      let foundWorkout = await Workout.findById(id)
+      let createdReview = await Review.create(req.body)
+      foundWorkout.reviews.push(createdReview._id)
+      foundWorkout.save()
+      // await Workout.findByIdAndUpdate(id, req.body, { new: true }).populate('reviews')
+      res.send(foundWorkout)
   })
  
 
