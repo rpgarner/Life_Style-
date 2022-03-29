@@ -41,7 +41,7 @@ app.get("/", (req, res) => {
       const {id} = req.params;
        await Workout.findByIdAndUpdate(id, req.body, { new: true }).populate('reviews')
   })
-  app.delete()
+ 
 
 
   app.get('/*', (req, res) => {
