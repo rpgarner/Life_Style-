@@ -16,6 +16,7 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(logger("dev"));
+app.use(express.static(`${__dirname}/client/build`));
 
 /////////// ROUTES //////////////////////
 app.get("/", (req, res) => {
@@ -40,8 +41,12 @@ app.get("/", (req, res) => {
       const {id} = req.params;
        await Workout.findByIdAndUpdate(id, req.body, { new: true }).populate('reviews')
   })
+  app.delete()
 
 
+  app.get('/*', (req, res) => {
+    res.sendFile(`${__dirname}/client/build/index.html`)
+   })
 
 /////////////// EXPRESS SERVER LISTEN TO PORT //////////////////
 app.listen(PORT, () => console.log(`Listening on port: ${PORT}`));
