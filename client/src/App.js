@@ -13,6 +13,11 @@ import axios from 'axios';
 function App() {
   const [workouts, setWorkouts] = useState([])
   const [reviews, setReviews] = useState([])
+  const [newReview, setNewReview] = useState({
+    comment: "",
+    rating: 0,
+    creater: ""
+  });
 
   useEffect(() => {
     async function getWorkouts() {
@@ -38,9 +43,29 @@ function App() {
     }
     getReviews();
   }, []);
+  const addNewReview = async (e) => {
+    e.preventDefault();
+    const currentReviews = reviews;
+    const createdReview = {
+      ...newReview,
+      comment: newReview.comment,
+      rating: newReview.rating,
+      creater: newReview.creator,
+    };
+
+    let response = await axios.post("http://localhost:3001/reviews/new",createdReview);
+    currentReviews.push(response.data);
+    setReviews(currentReviews);
+    setNewReview({ name: "", review: "", rating: "" });
+  };
+
+  const handleChange = (e) => {
+    setNewReview({ ...newReview, [e.target.name]: e.target.value });
+  };
   return (
     <div className="App">
       <header className="App-header">
+        <h1 className='title'>Life Style App</h1>
         <Nav /> 
       </header>
       <main>

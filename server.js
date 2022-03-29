@@ -4,6 +4,7 @@ const cors = require("cors");
 const db = require("./db");
 const { Workout, Review } = require("./models");
 const logger = require("morgan");
+const res = require("express/lib/response");
 
 //////// DEFINE VARIABLES /////////////
 const PORT = process.env.PORT || 3001;
@@ -20,20 +21,25 @@ app.use(logger("dev"));
 app.get("/", (req, res) => {
   res.send("This is root!");
 });
-app.post("/addWorkout", async (req, res) => {
-    const workouts = await Workout.find({});
-    res.json(workouts);
-  });
+// app.post("/addWorkout", async (req, res) => {
+//     const workouts = await Workout.find({});
+//     res.json(workouts);
+//   });
   
   app.get("/yourWorkouts", async (req, res) => {
     const reviews = await Workout.find({});
     res.json(reviews);
   });
   
-  app.post("/addWorkout", async (req, res) => {
+  app.post("/YourWorkout", async (req, res) => {
     const newReview = await Review.create(req.body);
     await res.json(newReview);
   });
+  
+  app.put("/yourWorkouts/:id", async (req, res) => {
+      const {id} = req.params;
+       await Workout.findByIdAndUpdate(id, req.body, { new: true }).populate('reviews')
+  })
 
 
 

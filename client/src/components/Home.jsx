@@ -5,7 +5,7 @@ const Home = () => {
   
     return (
      <div>
-        Home Page
+        Home Page, make a welcome message and design
      </div>
     )
   }

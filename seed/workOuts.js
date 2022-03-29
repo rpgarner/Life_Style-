@@ -15,6 +15,7 @@ const main = async () => {
         duration: 20,
         description: '5 strict chest to bar pull ups, 10 ring push ups, 20 box step ups ',
         
+        
     },
     {
         type: 'Barbell lunges and double unders',
