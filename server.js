@@ -20,13 +20,13 @@ app.use(logger("dev"));
 app.get("/", (req, res) => {
   res.send("This is root!");
 });
-app.get("/addWorkout", async (req, res) => {
-    const games = await Game.find({});
-    res.json(games);
+app.post("/addWorkout", async (req, res) => {
+    const workouts = await Workout.find({});
+    res.json(workouts);
   });
   
-  app.post("/yourWorkouts", async (req, res) => {
-    const reviews = await Review.find({});
+  app.get("/yourWorkouts", async (req, res) => {
+    const reviews = await Workout.find({});
     res.json(reviews);
   });
   
