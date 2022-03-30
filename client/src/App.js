@@ -14,11 +14,8 @@ function App() {
   ////////////UseState/////////
   const [workouts, setWorkouts] = useState([]);
   const [reviews, setReviews] = useState([]);
-  const [selectedWorkout, setSelectedWorkout] = useState({
-    type: "",
-    duration: "",
-    description: "",
-  });
+  const [selectedWorkout, setSelectedWorkout] = useState({});
+  // const [selectedId, setSelectedId] = useState('')
   // const [newReview, setNewReview] = useState({
   //   comment: "",
   //   rating: "",
@@ -29,7 +26,7 @@ function App() {
     duration: "",
     description: "",
   });
-  console.log(newWorkout)
+  console.log(selectedWorkout)
   ////////////useEffect to get information
   useEffect(() => {
     async function getWorkouts() {
@@ -53,7 +50,7 @@ function App() {
       }
     }
     getReviews();
-  }, []);
+  }, [workouts]);
   const addNewWorkout = async (e) => {
     e.preventDefault();
     const currentWorkouts = workouts;
@@ -76,20 +73,18 @@ function App() {
   const handleChange = (e) => {
     setNewWorkout({ ...newWorkout, [e.target.name]: e.target.value });
   };
-
+//update a workout
   const updateAWorkout = async (e) => {
     e.preventDefault();
    
     const updateWorkout = {
       ...selectedWorkout,
-      type: selectedWorkout.type,
-      duration: selectedWorkout.duration,
-      description: selectedWorkout.description,
 
     };
-
+    console.log(updateWorkout, 'update workout')
+    console.log(selectedWorkout._id, 'here is the id')
     let updatedWorkout = await axios.put(
-      `http://localhost:3001/yourWorkouts/${updateWorkout._id}`,
+      `http://localhost:3001/yourWorkouts/${selectedWorkout._id}`,
        updateWorkout
     );
     const toChangeWorkout = workouts.find((workout) => workouts.id === updatedWorkout.data._id);
@@ -100,6 +95,18 @@ function App() {
   const handleUpdate = (e) => {
     setSelectedWorkout({ ...selectedWorkout, [e.target.name]: e.target.value });
   };
+// delete a workout
+
+const deleteWorkout = async (workout) => {
+
+  await axios.delete(`http://localhost:3001/yourWorkouts/${workout._id}`).then((respond) => {
+      console.log(respond)
+      
+  }).catch((error) => {
+      console.log(error)
+  })
+  
+}
 
   return (
     <div className="App">
@@ -113,7 +120,7 @@ function App() {
           <Route path="/profile" element={<Profile />} />
           <Route
             path="/yourWorkouts"
-            element={<YourWorkouts workouts={workouts} reviews={reviews} />}
+            element={<YourWorkouts workouts={workouts} reviews={reviews} deleteWorkout={deleteWorkout} setSelectedWorkout={setSelectedWorkout} />}
           />
           <Route
             path="/yourWorkouts/:id"
