@@ -2,20 +2,24 @@ import React from 'react';
 
 
 const YourWorkouts = (props) => {
-    const submitData = (e) => {
-        e.preventDefault();
-        props.addNewReview(e);
-      };
+    // const submitData = (e) => {
+    //     e.preventDefault();
+    //     props.addNewReview(e);
+    //   };
 
     return (
-        <div>
+        <div className='yourWorkouts'>
             Your workouts here
             {props.workouts.map((workout) => (
-                <div key={workout._id}>
-                    <h5>{workout.type}</h5>
-                    <h6>{workout.duration}</h6>
-                    <p>{workout.description}</p>
-                    <form onSubmit={submitData}>
+                <div className ='workout' key={workout._id}>
+                    <h2>{workout.type}</h2>
+                    <h6>{workout.duration}Minutes</h6>
+                    <p>Description: {workout.description}</p>
+                    <div>
+                        <h4>Update Workout</h4>
+                        
+                    </div>
+                    {/* <form onSubmit={submitData} >
                         <input
                             type='text'
                             value={props.newReview.comment}
@@ -37,7 +41,8 @@ const YourWorkouts = (props) => {
                             name={"creator"}
                             placeholder={"your name here"}
                             />
-                    </form>
+                            <button>Submit</button>
+                    </form> */}
                 </div>
             ))}
         </div>

@@ -12,11 +12,16 @@ import axios from "axios";
 function App() {
   const [workouts, setWorkouts] = useState([]);
   const [reviews, setReviews] = useState([]);
-  const [newReview, setNewReview] = useState({
-    comment: "",
-    rating: 0,
-    creater: "",
-  });
+  // const [newReview, setNewReview] = useState({
+  //   comment: "",
+  //   rating: "",
+  //   creater: "",
+  // });
+  const[newWorkout, setNewWorkout] = useState({
+    type: "",
+    duration: "",
+    description: "",
+  })
 
   useEffect(() => {
     async function getWorkouts() {
@@ -32,7 +37,7 @@ function App() {
 
     async function getReviews() {
       try {
-        let res = await axios.get(`http://localhost:3001/yourWorkouts`);
+        let res = await axios.get(`http://localhost:3001/yourWorkouts/`);
         setReviews(res.data);
         console.log(res);
       } catch (error) {
@@ -41,27 +46,24 @@ function App() {
     }
     getReviews();
   }, []);
-  const addNewReview = async (e) => {
+  const addNewWorkout = async (e) => {
     e.preventDefault();
-    const currentReviews = reviews;
-    const createdReview = {
-      ...newReview,
-      comment: newReview.comment,
-      rating: newReview.rating,
-      creater: newReview.creator,
+    const currentWorkouts = workouts;
+    const createdWorkout = {
+      ...newWorkout,
+      type: newWorkout.type,
+      duration: newWorkout.duration,
+      description: newWorkout.description,
     };
 
-    let response = await axios.post(
-      "http://localhost:3001/reviews/new",
-      createdReview
-    );
-    currentReviews.push(response.data);
-    setReviews(currentReviews);
-    setNewReview({ name: "", review: "", rating: "" });
+    let response = await axios.post("http://localhost:3001/yourWorkouts/addWorkout",createdWorkout);
+    currentWorkouts.push(response.data);
+    setWorkouts(currentWorkouts);
+    setNewWorkout({ type: "", duration: "", description: "" });
   };
 
   const handleChange = (e) => {
-    setNewReview({ ...newReview, [e.target.name]: e.target.value });
+    setNewWorkout({ ...newWorkout, [e.target.name]: e.target.value });
   };
   return (
     <div className="App">
@@ -79,13 +81,13 @@ function App() {
               <YourWorkouts
                 workouts={workouts}
                 reviews={reviews}
-                newReview={newReview}
-                handleChange={handleChange}
-                addNewReview={addNewReview}
               />
             }
           />
-          <Route path="/addWorkout" element={<AddWorkout />} />
+          <Route path="/yourWorkouts/addWorkout" element={<AddWorkout 
+                newWorkout={newWorkout}
+                handleChange={handleChange}
+                addNewWorkout={addNewWorkout} />} />
         </Routes>
       </main>
     </div>

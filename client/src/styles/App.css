@@ -14,3 +14,11 @@ header {
 .title {
   margin: 0;
 }
+.yourWorkouts {
+  background-color: teal;
+  text-align: center;
+}
+.workout {
+  background-color: rgb(6, 67, 85);
+  color: white;
+}
