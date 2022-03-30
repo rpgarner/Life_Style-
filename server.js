@@ -60,7 +60,9 @@ app.put("/yourWorkouts/:id", async (req,res) => {
 })
 
 app.delete('/yourWorkouts/:id', async (req,res) => {
-  
+  const { id } = req.params;
+  let deletedWorkout = await Workout.findByIdAndDelete(id)
+  res.status(200).send('workout deleted')
 })
 
 
