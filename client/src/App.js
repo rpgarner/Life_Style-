@@ -50,7 +50,7 @@ function App() {
       }
     }
     getReviews();
-  }, [workouts]);
+  }, []);
   const addNewWorkout = async (e) => {
     e.preventDefault();
     const currentWorkouts = workouts;
