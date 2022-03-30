@@ -9,8 +9,9 @@ const AddWorkout = (props) => {
     navigate("/yourWorkouts")
   };
   return (
-    <div>
-      Create workout page
+    <div className="pageTitle">
+      <h3>Create workout page</h3>
+  
       <form onSubmit={submitData}>
         <input
           type="text"

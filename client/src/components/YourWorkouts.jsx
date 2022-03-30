@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 
 const YourWorkouts = (props) => {
@@ -7,11 +8,17 @@ const YourWorkouts = (props) => {
     //     props.addNewReview(e);
     //   };
 
+    let navigate = useNavigate()
+
+    const showWorkout = (workout) => {
+        navigate(`${workout._id}`)
+    }
+
     return (
         <div className='yourWorkouts'>
             Your workouts here
             {props.workouts.map((workout) => (
-                <div className ='workout' key={workout._id}>
+                <div className ='workout' onClick={() => showWorkout(workout)} key={workout._id}>
                     <h2>{workout.type}</h2>
                     <h6>{workout.duration}Minutes</h6>
                     <p>Description: {workout.description}</p>
@@ -43,6 +50,7 @@ const YourWorkouts = (props) => {
                             />
                             <button>Submit</button>
                     </form> */}
+                    <button>Delete</button>
                 </div>
             ))}
         </div>

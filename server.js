@@ -24,53 +24,45 @@ app.use(express.static(`${__dirname}/client/build`));
 app.get("/", (req, res) => {
   res.send("This is root!");
 });
-// adds workouts to api
+// Create
+  //creates wrokout to api
 app.post("/YourWorkouts/addWorkout", async (req, res) => {
   const newWorkout = await Workout.create(req.body);
   await res.json(newWorkout);
 });
-// gets workouts from api
+// read
+  // gets workouts from api
 app.get("/yourWorkouts", async (req, res) => {
   const workouts = await Workout.find({});
   res.json(workouts);
 });
-//get workouts by ID to link with reviews 
+  // get workouts by ID to link with reviews 
 app.get("/yourWorkouts/:id", async (req, res) => {
   const { id } = req.params;
   let foundWorkout = await Workout.findById(id).populate("reviews");
   res.json(foundWorkout);
 });
-//put reviews in workout
-app.put("/yourWorkouts/:id", async (req, res) => {
-  const { id } = req.params;
-  let foundWorkout = await Workout.findById(id);
-  let createdReview = await Review.create(req.body);
-  foundWorkout.reviews.push(createdReview._id);
-  foundWorkout.save();
-  res.send(foundWorkout);
-});
-
+// Update
+  //put reviews in workout
 // app.put("/yourWorkouts/:id", async (req, res) => {
-//   try {
-//     const { id } = req.params;
-//     await Workout.findByIdAndUpdate(
-//       id,
-//       req.body,
-//       { new: true },
-//       (err, workout) => {
-//         if (err) {
-//           res.status(500).send(err);
-//         }
-//         if (!workout) {
-//           res.status(500).send("Workout  not found!");
-//         }
-//         return res.status(200).json(workout);
-//       }
-//     );
-//   } catch (error) {
-//     return res.status(500).send(error.message);
-//   }
+//   const { id } = req.params;
+//   let foundWorkout = await Workout.findById(id);
+//   let createdReview = await Review.create(req.body);
+//   foundWorkout.reviews.push(createdReview._id);
+//   foundWorkout.save();
+//   res.send(foundWorkout);
 // });
+ //////////update workout/////////
+app.put("/yourWorkouts/:id", async (req,res) => {
+  const {id} = req.params;
+  let foundWorkout = await Workout.findByIdAndUpdate(id, req.body, { new: true});
+  res.send(foundWorkout)
+})
+
+app.delete('/yourWorkouts/:id', async (req,res) => {
+  
+})
+
 
 // app.use('/api', routes);
 

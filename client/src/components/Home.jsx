@@ -4,7 +4,8 @@ import React from 'react';
 const Home = () => {
   
     return (
-     <div>
+     <div className = 'homePage'>
+
         Home Page, make a welcome message and design
      </div>
     )

@@ -1,5 +1,5 @@
 nav {
-  background-color: rgb(241, 211, 166);
+  background-color: #faac64;
  
 }
 .navBar {
@@ -8,17 +8,28 @@ nav {
 }
 header {
   text-align: center;
-  background-color: rgb(3, 103, 128);
+  background-color: #a3dec9;
   color: white;
 }
 .title {
   margin: 0;
 }
 .yourWorkouts {
-  background-color: teal;
+  background-color:#e6efbf;
   text-align: center;
 }
 .workout {
-  background-color: rgb(6, 67, 85);
+  background-color: #4ac3be;
   color: white;
+}
+.homePage {
+  background-color: #e6efbf;
+  color: white;
+}
+body {
+  background-color: #4ac3be;
+}
+.pageTitle {
+  background-color:#e6efbf;
+  text-align: center;
 }
