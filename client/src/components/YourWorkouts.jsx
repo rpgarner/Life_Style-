@@ -26,9 +26,9 @@ const YourWorkouts = (props) => {
 
     return (
         <div className='yourWorkouts'>
-            Your workouts here
+            <h1>Workouts</h1>
             {props.workouts.map((workout) => (
-                <div>
+                <div key={workout._id}>
                <button onClick={() => showWorkout(workout)}> Update Workout</button>
                <button onClick={() => props.deleteWorkout(workout)}>Delete</button>
                <button onClick={() => makeAComment(workout)}>Add Comment</button>
