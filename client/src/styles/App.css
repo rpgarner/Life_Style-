@@ -34,3 +34,19 @@ body {
   background-color:#e6efbf;
   text-align: center;
 }
+.profilePage {
+  text-align: center;
+}
+.profileArticles {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.article {
+  background-color:#e6efbf;
+  text-align: center;
+}
+img {
+  height: 150px;
+  max-width: 250px;
+}
