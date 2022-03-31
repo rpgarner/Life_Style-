@@ -24,7 +24,8 @@ header {
 }
 .homePage {
   background-color: #e6efbf;
-  color: white;
+  color: rgb(5, 2, 2);
+  text-align: center;
 }
 body {
   background-color: #4ac3be;

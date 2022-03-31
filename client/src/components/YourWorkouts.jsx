@@ -6,11 +6,8 @@ import { useNavigate } from 'react-router-dom';
 
 
 
+
 const YourWorkouts = (props) => {
-    // const submitData = (e) => {
-    //     e.preventDefault();
-    //     props.addNewReview(e);
-    //   };
 
     let navigate = useNavigate()
 
@@ -20,19 +17,10 @@ const YourWorkouts = (props) => {
         // props.setSelectedId(workout._id)
         navigate(`${workout._id}`)
     }
-
-    // const deleteAWorkout = async (e) => {
-    //     e.preventDefault();
-      
-    //     const deleteWorkout = {
-    //       ...selectedWorkout}
-    //       let deletedWorkout = await axios.delete(`http://localhost:3001/yourWorkouts/${deleteWorkout._id}`,
-    //       deleteWorkout);
-    //   }
-      
-    //   const handleDelete = (e) => {
-    //     set
-    //   }
+    const makeAComment = (workout) => {
+        navigate(`/yourWorkouts/addComment/${workout._id}`)
+    }
+ 
 
 
 
@@ -41,21 +29,24 @@ const YourWorkouts = (props) => {
             Your workouts here
             {props.workouts.map((workout) => (
                 <div>
-               
-
-                <div className ='workout' onClick={() => showWorkout(workout)} key={workout._id}>
+               <button onClick={() => showWorkout(workout)}> Update Workout</button>
+               <button onClick={() => props.deleteWorkout(workout)}>Delete</button>
+               <button onClick={() => makeAComment()}>Add Comment</button>
+                
+                <div className ='workout' key={workout._id}>
                     
                     <h2>{workout.type}</h2>
                     <h6>{workout.duration}Minutes</h6>
                     <p>Description: {workout.description}</p>
                     <div>
-                        <h4>Update Workout</h4>
+                        <h4>Comments</h4>
+                        <p>{workout.reviews}</p>
                         
                     </div>
                   
                     
                 </div>
-                <button onClick={() => props.deleteWorkout(workout)}>Delete</button>
+                
                 </div>
             ))}
         </div>

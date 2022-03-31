@@ -33,6 +33,7 @@ see how we built this game, in our attached Trello board https://trello.com/b/1J
 
 - https://stackoverflow.com/
 - https://www.w3schools.com/css/css3_buttons.asp
+- https://designs.ai/colors/
 
 #### Tools used
 -   Html, css, and java scripts 

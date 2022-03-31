@@ -36,6 +36,11 @@ app.get("/yourWorkouts", async (req, res) => {
   const workouts = await Workout.find({});
   res.json(workouts);
 });
+
+app.get("/yourWorkouts/addWorkout", async (req, res) => {
+  const workouts = await Workout.find({});
+  res.json(workouts);
+});
   // get workouts by ID to link with reviews 
 app.get("/yourWorkouts/:id", async (req, res) => {
   const { id } = req.params;
@@ -43,15 +48,15 @@ app.get("/yourWorkouts/:id", async (req, res) => {
   res.json(foundWorkout);
 });
 // Update
-  //put reviews in workout
-// app.put("/yourWorkouts/:id", async (req, res) => {
-//   const { id } = req.params;
-//   let foundWorkout = await Workout.findById(id);
-//   let createdReview = await Review.create(req.body);
-//   foundWorkout.reviews.push(createdReview._id);
-//   foundWorkout.save();
-//   res.send(foundWorkout);
-// });
+  // put reviews in workout
+app.put("/yourWorkouts/addComment:id", async (req, res) => {
+  const { id } = req.params;
+  let foundWorkout = await Workout.findById(id);
+  let createdReview = await Review.create(req.body);
+  foundWorkout.reviews.push(createdReview._id);
+  foundWorkout.save();
+  res.send(foundWorkout);
+});
  //////////update workout/////////
 app.put("/yourWorkouts/:id", async (req,res) => {
   const {id} = req.params;

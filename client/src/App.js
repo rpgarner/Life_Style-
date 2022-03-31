@@ -9,6 +9,7 @@ import AddWorkout from "./components/AddWorkout";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import UpdateWorkout from "./components/UpdateWorkout";
+import AddComment from "./components/AddComment";
 
 function App() {
   ////////////UseState/////////
@@ -142,6 +143,7 @@ const deleteWorkout = async (workout) => {
               />
             }
           />
+          <Route path="/yourWorkouts/addComment" element={ <AddComment />} />
         </Routes>
       </main>
     </div>
