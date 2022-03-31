@@ -1,6 +1,5 @@
 nav {
   background-color: #faac64;
- 
 }
 .navBar {
   display: flex;
@@ -14,17 +13,40 @@ header {
 .title {
   margin: 5px;
   font-size: xxx-large;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
-.yourWorkouts {
-  background-color:#e6efbf;
+.workoutTitle {
+  background-color: #e6efbf;
   text-align: center;
+  margin: 0;
+}
 
+.yourWorkouts {
+  background-color: #faac64;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+button {
+  width: 120px;
+  margin: 1px 100px;
+}
+.workouts {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .workout {
   background-color: #4ac3be;
   color: white;
+  width: 320px;
+  height: 300px;
+  margin: 5px;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .homePage {
   background-color: #e6efbf;
@@ -36,7 +58,7 @@ body {
   background-color: #4ac3be;
 }
 .pageTitle {
-  background-color:#e6efbf;
+  background-color: #e6efbf;
   text-align: center;
 }
 .profilePage {
@@ -46,10 +68,9 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-
 }
 .article {
-  background-color:#e6efbf;
+  background-color: #e6efbf;
   text-align: center;
 }
 img {
@@ -57,5 +78,5 @@ img {
   max-width: 250px;
 }
 body {
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }

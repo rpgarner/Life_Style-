@@ -27,30 +27,19 @@ function App() {
     duration: "",
     description: "",
   });
-  console.log(selectedWorkout)
+  console.log(selectedWorkout);
   ////////////useEffect to get information
   useEffect(() => {
     async function getWorkouts() {
       try {
         let res = await axios.get(`http://localhost:3001/yourWorkouts`);
-        
+
         setWorkouts(res.data);
       } catch (error) {
         console.log(error);
       }
     }
     getWorkouts();
-
-    async function getReviews() {
-      try {
-        let res = await axios.get(`http://localhost:3001/yourWorkouts/`);
-        setReviews(res.data.reviews);
-        // console.log(res);
-      } catch (error) {
-        console.log(error);
-      }
-    }
-    getReviews();
   }, []);
   const addNewWorkout = async (e) => {
     e.preventDefault();
@@ -74,40 +63,41 @@ function App() {
   const handleChange = (e) => {
     setNewWorkout({ ...newWorkout, [e.target.name]: e.target.value });
   };
-//update a workout
+  //update a workout
   const updateAWorkout = async (e) => {
     e.preventDefault();
-   
+
     const updateWorkout = {
       ...selectedWorkout,
-
     };
-    console.log(updateWorkout, 'update workout')
-    console.log(selectedWorkout._id, 'here is the id')
+    console.log(updateWorkout, "update workout");
+    console.log(selectedWorkout._id, "here is the id");
     let updatedWorkout = await axios.put(
       `http://localhost:3001/yourWorkouts/${selectedWorkout._id}`,
-       updateWorkout
+      updateWorkout
     );
-    const toChangeWorkout = workouts.find((workout) => workouts.id === updatedWorkout.data._id);
-    workouts.splice(toChangeWorkout,1, updateWorkout)
+    const toChangeWorkout = workouts.find(
+      (workout) => workouts.id === updatedWorkout.data._id
+    );
+    workouts.splice(toChangeWorkout, 1, updateWorkout);
     setSelectedWorkout({ type: "", duration: "", description: "" });
   };
 
   const handleUpdate = (e) => {
     setSelectedWorkout({ ...selectedWorkout, [e.target.name]: e.target.value });
   };
-// delete a workout
+  // delete a workout
 
-const deleteWorkout = async (workout) => {
-
-  await axios.delete(`http://localhost:3001/yourWorkouts/${workout._id}`).then((respond) => {
-      console.log(respond)
-      
-  }).catch((error) => {
-      console.log(error)
-  })
-  
-}
+  const deleteWorkout = async (workout) => {
+    await axios
+      .delete(`http://localhost:3001/yourWorkouts/${workout._id}`)
+      .then((respond) => {
+        console.log(respond);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   return (
     <div className="App">
@@ -121,7 +111,14 @@ const deleteWorkout = async (workout) => {
           <Route path="/profile" element={<Profile />} />
           <Route
             path="/yourWorkouts"
-            element={<YourWorkouts workouts={workouts} reviews={reviews} deleteWorkout={deleteWorkout} setSelectedWorkout={setSelectedWorkout} />}
+            element={
+              <YourWorkouts
+                workouts={workouts}
+                reviews={reviews}
+                deleteWorkout={deleteWorkout}
+                setSelectedWorkout={setSelectedWorkout}
+              />
+            }
           />
           <Route
             path="/yourWorkouts/:id"
@@ -134,7 +131,7 @@ const deleteWorkout = async (workout) => {
             }
           />
           <Route
-            path="/yourWorkouts/addWorkout/"
+            path="/yourWorkouts/addWorkout"
             element={
               <AddWorkout
                 newWorkout={newWorkout}
@@ -143,7 +140,10 @@ const deleteWorkout = async (workout) => {
               />
             }
           />
-          <Route path="/yourWorkouts/addComment/:id" element={ <AddComment />} />
+          <Route
+            path="/yourWorkouts/addComment/:id"
+            element={<AddComment reviews={reviews} setReviews={setReviews} />}
+          />
         </Routes>
       </main>
     </div>

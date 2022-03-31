@@ -6,12 +6,12 @@ const AddWorkout = (props) => {
   const submitData = (e) => {
     e.preventDefault();
     props.addNewWorkout(e);
-    navigate("/yourWorkouts")
+    navigate("/yourWorkouts");
   };
   return (
     <div className="pageTitle">
       <h3>Create workout page</h3>
-  
+
       <form onSubmit={submitData}>
         <input
           type="text"
@@ -36,6 +36,7 @@ const AddWorkout = (props) => {
         />
         <button>Submit</button>
       </form>
+      <button onClick={() => navigate('/yourWorkouts')}>Back</button>
     </div>
   );
 };
