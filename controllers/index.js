@@ -27,7 +27,6 @@ const getWorkoutbyID = async (req, res) => {
   res.json(foundWorkout);
 };
 
-
 // Update
 // put reviews in workout
 const postAComment = async (req, res) => {
@@ -61,5 +60,5 @@ module.exports = {
   getWorkoutbyID,
   postAComment,
   updateWorkout,
-  deleteWorkout 
+  deleteWorkout,
 };
