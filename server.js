@@ -4,7 +4,6 @@ const cors = require("cors");
 const db = require("./db");
 const { Workout, Review } = require("./models");
 const logger = require("morgan");
-const res = require("express/lib/response");
 const routes = require("./routes");
 
 //////// DEFINE VARIABLES /////////////
