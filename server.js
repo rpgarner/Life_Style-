@@ -37,7 +37,7 @@ app.get("/yourWorkouts", async (req, res) => {
   res.json(workouts);
 });
 
-app.get("/yourWorkouts/addWorkout", async (req, res) => {
+app.get("/yourWorkouts/addComment", async (req, res) => {
   const workouts = await Workout.find({});
   res.json(workouts);
 });
@@ -47,15 +47,17 @@ app.get("/yourWorkouts/:id", async (req, res) => {
   let foundWorkout = await Workout.findById(id).populate("reviews");
   res.json(foundWorkout);
 });
+
+// app.get("/yourWorkouts/")
 // Update
   // put reviews in workout
-app.put("/yourWorkouts/addComment:id", async (req, res) => {
+app.post("/yourWorkouts/addComment/:id", async (req, res) => {
   const { id } = req.params;
   let foundWorkout = await Workout.findById(id);
   let createdReview = await Review.create(req.body);
-  foundWorkout.reviews.push(createdReview._id);
+  foundWorkout.reviews.push(createdReview);
   foundWorkout.save();
-  res.send(foundWorkout);
+  res.json(foundWorkout);
 });
  //////////update workout/////////
 app.put("/yourWorkouts/:id", async (req,res) => {

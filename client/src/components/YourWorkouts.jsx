@@ -31,7 +31,7 @@ const YourWorkouts = (props) => {
                 <div>
                <button onClick={() => showWorkout(workout)}> Update Workout</button>
                <button onClick={() => props.deleteWorkout(workout)}>Delete</button>
-               <button onClick={() => makeAComment()}>Add Comment</button>
+               <button onClick={() => makeAComment(workout)}>Add Comment</button>
                 
                 <div className ='workout' key={workout._id}>
                     

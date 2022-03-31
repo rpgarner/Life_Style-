@@ -134,7 +134,7 @@ const deleteWorkout = async (workout) => {
             }
           />
           <Route
-            path="/yourWorkouts/addWorkout"
+            path="/yourWorkouts/addWorkout/"
             element={
               <AddWorkout
                 newWorkout={newWorkout}
@@ -143,7 +143,7 @@ const deleteWorkout = async (workout) => {
               />
             }
           />
-          <Route path="/yourWorkouts/addComment" element={ <AddComment />} />
+          <Route path="/yourWorkouts/addComment/:id" element={ <AddComment />} />
         </Routes>
       </main>
     </div>

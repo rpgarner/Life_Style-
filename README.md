@@ -4,7 +4,7 @@ This a full stack app that lets you plan out your life  work outs, diets, and go
  ![Lifestyle pic](https://vir.com.vn/stores/news_dataimages/hung/062020/23/06/1497p16-the-vital-pillars-for-a-healthy-lifestyle.jpg)
 ## Overview
 
-Starting with workouts the goal of this app is to help you organize workouts, diets, and goals. I dont know about you but I have tried so many work out programs, diet regimets, but they are always temporary, as soon as the program is done it is hard to continue. Lets get really it is hard to plan out your life. We believe that the best porogram is something that fits your life style, easy to maintain/plan, and is a life style that last. This app helps you log all the best work outs meanls... etc. Into one place you can plan your workouts, plan your meals, and plan your life style.
+Starting with workouts the goal of this app is to help you organize workouts, diets, and goals. I dont know about you but I have tried so many work out programs, diet regimets, but they are always temporary, as soon as the program is done it is hard to continue. Lets get really, it is hard to plan out your life. We believe that the best porogram, is something that fits your life style, is easy to maintain/plan, and is a life style that last. This app helps you log all the best work outs meanls... etc. Into one place you can plan your workouts, plan your meals, and plan your life style.
 ## Getting Started
 
 - go to your home page here: 
