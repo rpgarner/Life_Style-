@@ -1,6 +1,6 @@
 const { model } = require('mongoose')
-const WorkoutSchema = require('./workout.js')
-const ReviewSchema = require('./review.js')
+const WorkoutSchema = require('./workout')
+const ReviewSchema = require('./review')
 
 const Workout = model('Workout', WorkoutSchema)
 const Review = model('Review', ReviewSchema)

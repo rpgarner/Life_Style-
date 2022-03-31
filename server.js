@@ -2,7 +2,7 @@
 const express = require("express");
 const cors = require("cors");
 const db = require("./db");
-const { Workout, Review } = require("./models/index.js");
+const { Workout, Review } = require("./models");
 const logger = require("morgan");
 const routes = require("./routes");
 
