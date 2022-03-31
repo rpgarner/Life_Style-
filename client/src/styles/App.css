@@ -12,11 +12,15 @@ header {
   color: white;
 }
 .title {
-  margin: 0;
+  margin: 5px;
+  font-size: xxx-large;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+
 }
 .yourWorkouts {
   background-color:#e6efbf;
   text-align: center;
+
 }
 .workout {
   background-color: #4ac3be;
@@ -24,7 +28,8 @@ header {
 }
 .homePage {
   background-color: #e6efbf;
-  color: rgb(5, 2, 2);
+  color: black;
+  font-weight: 400;
   text-align: center;
 }
 body {
@@ -41,6 +46,7 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+
 }
 .article {
   background-color:#e6efbf;
@@ -49,4 +55,7 @@ body {
 img {
   height: 150px;
   max-width: 250px;
+}
+body {
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }

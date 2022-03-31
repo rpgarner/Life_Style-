@@ -33,6 +33,7 @@ const Home = () => {
         name={"password"}
         placeholder={"password"}
         />
+        <button>Submit</button>
     </form>
     </div>
 

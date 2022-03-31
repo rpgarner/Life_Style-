@@ -19,10 +19,7 @@ app.use(logger("dev"));
 app.use(express.static(`${__dirname}/client/build`));
 
 /////////// ROUTES //////////////////////
-// for test
-app.get("/", (req, res) => {
-  res.send("This is root!");
-});
+
 // Create
   //creates wrokout to api
 app.post("/YourWorkouts/addWorkout", async (req, res) => {
@@ -36,7 +33,7 @@ app.get("/yourWorkouts", async (req, res) => {
   res.json(workouts);
 });
 
-app.get("/yourWorkouts", async (req,res) => {
+app.get("/yourReviews", async (req,res) => {
   const reviews = await Review.find({});
   res.send(reviews)
 })

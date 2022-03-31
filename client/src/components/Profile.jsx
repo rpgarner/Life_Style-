@@ -1,12 +1,15 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Profile = () => {
+
+    let navigate = useNavigate()
   
     return (
      <div className='profilePage'>
          <h1 className='homePage'>Profile</h1>
          <div className='profileArticles'>
-        <div className='article'>
+        <div className='article' onClick={() => navigate('/yourWorkouts')}>
             <h3>Workouts</h3>
             <img src='https://thumbs.dreamstime.com/b/morning-workout-routine-home-gym-morning-workout-routine-home-gym-fitness-motivation-muscle-training-concept-man-122902002.jpg' alt='workout'></img>
         </div>
