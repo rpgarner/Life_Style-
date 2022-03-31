@@ -14,14 +14,15 @@ const YourWorkouts = (props) => {
     const showWorkout = (workout) => {
         console.log(workout, ' this is the workout')
         props.setSelectedWorkout(workout)
-        // props.setSelectedId(workout._id)
+        
         navigate(`${workout._id}`)
     }
     const makeAComment = (workout) => {
         navigate(`/yourWorkouts/addComment/${workout._id}`)
+        
     }
  
-
+    console.log(props.reviews)
 
 
     return (

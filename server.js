@@ -36,6 +36,11 @@ app.get("/yourWorkouts", async (req, res) => {
   res.json(workouts);
 });
 
+app.get("/yourWorkouts", async (req,res) => {
+  const reviews = await Review.find({});
+  res.send(reviews)
+})
+
 app.get("/yourWorkouts/addComment", async (req, res) => {
   const workouts = await Workout.find({});
   res.json(workouts);
@@ -56,7 +61,7 @@ app.post("/yourWorkouts/addComment/:id", async (req, res) => {
   let createdReview = await Review.create(req.body);
   foundWorkout.reviews.push(createdReview);
   foundWorkout.save();
-  res.json(foundWorkout);
+  res.json(foundWorkout.populate('reviews'));
 });
  //////////update workout/////////
 app.put("/yourWorkouts/:id", async (req,res) => {
