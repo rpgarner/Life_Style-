@@ -84,6 +84,7 @@ function App() {
           console.log(error);
         }
       }
+      
   }, []);
 
     ////////////// Update /////////////
