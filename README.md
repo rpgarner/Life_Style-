@@ -35,6 +35,8 @@ see how we built this game, in our attached Trello board https://trello.com/b/1J
 - https://www.w3schools.com/css/css3_buttons.asp
 - https://designs.ai/colors/
 - https://www.google.com/imghp?hl=en&ogbl
+- https://www.sugarwod.com/
+- https://www.delish.com/cooking/g4798/easy-keto-diet-dinner-recipes/
 
 #### Tools used
 -   Html, css, and java scripts 

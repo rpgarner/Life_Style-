@@ -27,13 +27,14 @@ const AddWorkout = (props) => {
           name={"duration"}
           placeholder={"minutes"}
         />
-        <input
-          type="text"
+        <input  type="text"
           value={props.newWorkout.description}
           onChange={props.handleChange}
           name={"description"}
           placeholder={"workout info"}
-        />
+          size="50"
+          >
+          </input>
         <button>Submit</button>
       </form>
       <button onClick={() => navigate('/yourWorkouts')}>Back</button>

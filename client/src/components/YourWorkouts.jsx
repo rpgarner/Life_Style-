@@ -17,11 +17,12 @@ const YourWorkouts = (props) => {
   console.log(props.reviews);
 
   return (
-    <div className="workoutTitle">
-      <h1>Workouts</h1>
+    <div className="workoutsTitle">
       <button onClick={() => navigate("/yourWorkouts/addWorkout")}>
         Add Workout
       </button>
+      <h1>Workouts</h1>
+
       <div className="yourWorkouts">
         {props.workouts.map((workout) => (
           <div key={workout._id} className="workouts">
@@ -33,7 +34,7 @@ const YourWorkouts = (props) => {
             <button onClick={() => makeAComment(workout)}>Add Comment</button>
 
             <div className="workout" key={workout._id}>
-              <h2>{workout.type}</h2>
+              <h2 className="workoutTitle">{workout.type}</h2>
               <h6>{workout.duration}Minutes</h6>
               <p>Description: {workout.description}</p>
               <div>

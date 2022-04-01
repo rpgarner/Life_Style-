@@ -6,6 +6,7 @@ import { Routes, Route } from "react-router-dom";
 import Profile from "./components/Profile";
 import YourWorkouts from "./components/YourWorkouts";
 import AddWorkout from "./components/AddWorkout";
+import YourDiets from "./components/YourDiets";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import UpdateWorkout from "./components/UpdateWorkout";
@@ -27,19 +28,32 @@ function App() {
     duration: "",
     description: "",
   });
+  console.log(reviews, 'try this')
   console.log(selectedWorkout);
   ////////////useEffect to get information
   useEffect(() => {
     async function getWorkouts() {
       try {
         let res = await axios.get(`http://localhost:3001/yourWorkouts`);
-
+        console.log(res, 'workouts')
         setWorkouts(res.data);
       } catch (error) {
         console.log(error);
       }
     }
     getWorkouts();
+
+    async function getReviews() {
+      try {
+        let results = await axios.get(`http://localhost:3001/yourWorkouts/addComment`);
+        console.log(results, 'reviews')
+        setReviews(results.data);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    getReviews();
+
   }, []);
   const addNewWorkout = async (e) => {
     e.preventDefault();
@@ -144,6 +158,7 @@ function App() {
             path="/yourWorkouts/addComment/:id"
             element={<AddComment reviews={reviews} setReviews={setReviews} />}
           />
+          <Route path="/yourDiets" element={<YourDiets />}/>
         </Routes>
       </main>
     </div>

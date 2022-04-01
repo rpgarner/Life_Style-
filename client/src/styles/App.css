@@ -15,7 +15,12 @@ header {
   font-size: xxx-large;
   font-family: Georgia, "Times New Roman", Times, serif;
 }
-.workoutTitle {
+.workoutsTitle {
+  background-color: #e6efbf;
+  text-align: center;
+  margin: 0;
+}
+.workoutComment {
   background-color: #e6efbf;
   text-align: center;
   margin: 0;
@@ -27,10 +32,12 @@ header {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: space-around;
 }
 button {
   width: 120px;
-  margin: 1px 100px;
+  margin: 1px 110px;
+  background-color: #a3dec9;
 }
 .workouts {
   display: flex;
@@ -48,6 +55,19 @@ button {
   flex-direction: column;
   justify-content: space-between;
 }
+
+.diet {
+  background-color: #4ac3be;
+  color: white;
+  width: 320px;
+  height: 700px;
+  margin: 5px;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .homePage {
   background-color: #e6efbf;
   color: black;
@@ -79,4 +99,15 @@ img {
 }
 body {
   font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.workoutTitle {
+  border-bottom: 1px solid black;
+}
+
+h6 {
+  margin: 0 0 50px 0;
+}
+.addButton {
+ 
 }

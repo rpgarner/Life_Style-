@@ -15,7 +15,7 @@ const Profile = () => {
             alt="workout"
           ></img>
         </div>
-        <div className="article">
+        <div className="article" onClick={() => navigate('/yourDiets')}>
           <h3>Diets</h3>
           <img
             src="https://cdn.cancercenter.com/-/media/ctca/images/others/blogs/2019/06-june/02-blog-healthy-food-l.jpg"

@@ -3,19 +3,10 @@ import { useNavigate } from "react-router-dom";
 
 const AddComment = (props) => {
     const navigate = useNavigate()
-  async function getReviews() {
-    try {
-      let res = await axios.get(`http://localhost:3001/yourWorkouts/`);
-      props.setReviews(res.data.reviews);
-      // console.log(res);
-    } catch (error) {
-      console.log(error);
-    }
-  }
-  getReviews();
+ console.log(props.reviews, 'is this working ')
 
   return (
-    <div className="workoutTitle">
+    <div className="workoutComment">
       <h1>Add a comment</h1>
       <form>
         <input type="text" name={"comment"} placeholder={"Make a Comment"} />
@@ -23,6 +14,19 @@ const AddComment = (props) => {
         <input type="text" name={"creator"} placeholder={"Name"} />
         <button>Submit</button>
       </form>
+      <div className="yourWorkouts">
+        {props.reviews.map((review) => (
+          <div key={review._id} className="workouts">
+            <div className="workout" key={review._id}>
+              <h2 className="workoutTitle">{review.creator}</h2>
+              <p>{review.comment}</p>
+              <p>Description: {review.rating}</p>
+              
+            </div>
+          </div>
+          ))}
+          </div>
+          
       <button onClick={() => navigate('/yourWorkouts')}>Back</button>
     </div>
   );

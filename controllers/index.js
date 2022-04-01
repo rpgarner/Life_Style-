@@ -1,9 +1,17 @@
-const { Workout, Review } = require("../models/index");
-
+const { Workout, Review, Diet } = require("../models/index");
+///////////Creates///////////
 const addWorkout = async (req, res) => {
   const newWorkout = await Workout.create(req.body);
   await res.json(newWorkout);
 };
+const postAComment = async (req, res) => {
+    const { id } = req.params;
+    let foundWorkout = await Workout.findById(id);
+    let createdReview = await Review.create(req.body);
+    foundWorkout.reviews.push(createdReview);
+    foundWorkout.save();
+    res.json(foundWorkout.populate("reviews"));
+  };
 // read
 // gets workouts from api
 const getWorkouts = async (req, res) => {
@@ -12,9 +20,15 @@ const getWorkouts = async (req, res) => {
 };
 
 const getReviews = async (req, res) => {
-  const reviews = await Review.find({});
-  res.send(reviews);
+  const getreviews = await Review.find({});
+  res.json(getreviews);
 };
+
+const getDiets = async (req, res) => {
+    const diets = await Diet.find({});
+    
+    res.json(diets);
+  };
 
 const getWorkoutsForComment = async (req, res) => {
   const workouts = await Workout.find({});
@@ -29,14 +43,7 @@ const getWorkoutbyID = async (req, res) => {
 
 // Update
 // put reviews in workout
-const postAComment = async (req, res) => {
-  const { id } = req.params;
-  let foundWorkout = await Workout.findById(id);
-  let createdReview = await Review.create(req.body);
-  foundWorkout.reviews.push(createdReview);
-  foundWorkout.save();
-  res.json(foundWorkout.populate("reviews"));
-};
+
 //////////update workout/////////
 const updateWorkout = async (req, res) => {
   const { id } = req.params;
@@ -61,4 +68,5 @@ module.exports = {
   postAComment,
   updateWorkout,
   deleteWorkout,
+  getDiets,
 };
