@@ -6,12 +6,13 @@ const YourWorkouts = (props) => {
   let navigate = useNavigate();
   /////// this is to navigate to a workout id///////
   const showWorkout = (workout) => {
-    console.log(workout, " this is the workout");
+    
     props.setSelectedWorkout(workout);
     navigate(`${workout._id}`);
   };
   ////////navigate to comment page///////
   const makeAComment = (workout) => {
+    
     navigate(`/yourWorkouts/addComment/${workout._id}`);
   };
 

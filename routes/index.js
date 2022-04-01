@@ -12,6 +12,8 @@ router.get("/yourWorkouts/addComment", controllers.getWorkoutsForComment);
 
 router.get("/yourWorkouts/:id", controllers.getWorkoutbyID);
 
+router.get('/yourWorkouts/addComment/:id', controllers.getReviewsById)
+
 router.post("/yourWorkouts/addComment/:id", controllers.postAComment);
 
 router.put("/yourWorkouts/:id", controllers.updateWorkout);

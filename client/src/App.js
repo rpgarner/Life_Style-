@@ -56,6 +56,7 @@ function App() {
     async function getWorkouts() {
       try {
         let res = await axios.get(`http://localhost:3001/yourWorkouts`);
+        
         setWorkouts(res.data);
       } catch (error) {
         console.log(error);
@@ -73,6 +74,16 @@ function App() {
       }
     }
     getReviews();
+
+      /////////// get reviews by Id ///////
+      async function getReviewsById() {
+        try {
+          let res = await axios.get(`http://localhost:3001/yourWorkouts/addComment/${selectedWorkout._id}`)
+          console.log(res, 'this is review by ID')
+        } catch (error) {
+          console.log(error);
+        }
+      }
   }, []);
 
     ////////////// Update /////////////
@@ -128,6 +139,7 @@ function App() {
                 reviews={reviews}
                 deleteWorkout={deleteWorkout}
                 setSelectedWorkout={setSelectedWorkout}
+                setReviews={setReviews}
               />
             }
           />
@@ -153,7 +165,7 @@ function App() {
           />
           <Route
             path="/yourWorkouts/addComment/:id"
-            element={<AddComment reviews={reviews} setReviews={setReviews} handleUpdate={handleUpdate}
+            element={<AddComment reviews={reviews}  handleUpdate={handleUpdate}
             updateAWorkout={updateAWorkout}
             selectedWorkout={selectedWorkout} />}
           />
