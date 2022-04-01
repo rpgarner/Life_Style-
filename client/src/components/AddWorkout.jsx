@@ -1,17 +1,19 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
+////////////// Add a Workout component ////////////
 const AddWorkout = (props) => {
   let navigate = useNavigate();
+      ///////// onSubmit function ////////
   const submitData = (e) => {
     e.preventDefault();
     props.addNewWorkout(e);
     navigate("/yourWorkouts");
   };
+  
   return (
     <div className="pageTitle">
       <h3>Create workout page</h3>
-
       <form onSubmit={submitData}>
         <input
           type="text"

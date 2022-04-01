@@ -12,49 +12,21 @@ import axios from "axios";
 import UpdateWorkout from "./components/UpdateWorkout";
 import AddComment from "./components/AddComment";
 
+
 function App() {
   ////////////UseState/////////
   const [workouts, setWorkouts] = useState([]);
   const [reviews, setReviews] = useState([]);
   const [selectedWorkout, setSelectedWorkout] = useState({});
-  // const [selectedId, setSelectedId] = useState('')
-  // const [newReview, setNewReview] = useState({
-  //   comment: "",
-  //   rating: "",
-  //   creater: "",
-  // });
   const [newWorkout, setNewWorkout] = useState({
     type: "",
     duration: "",
     description: "",
   });
-  console.log(reviews, 'try this')
-  console.log(selectedWorkout);
-  ////////////useEffect to get information
-  useEffect(() => {
-    async function getWorkouts() {
-      try {
-        let res = await axios.get(`http://localhost:3001/yourWorkouts`);
-        console.log(res, 'workouts')
-        setWorkouts(res.data);
-      } catch (error) {
-        console.log(error);
-      }
-    }
-    getWorkouts();
-
-    async function getReviews() {
-      try {
-        let results = await axios.get(`http://localhost:3001/yourWorkouts/addComment`);
-        console.log(results, 'reviews')
-        setReviews(results.data);
-      } catch (error) {
-        console.log(error);
-      }
-    }
-    getReviews();
-
-  }, []);
+  
+  //////////////// axios calls ///////////////////
+      //////////// Create //////////
+        ///// post workout //////
   const addNewWorkout = async (e) => {
     e.preventDefault();
     const currentWorkouts = workouts;
@@ -73,19 +45,43 @@ function App() {
     setWorkouts(currentWorkouts);
     setNewWorkout({ type: "", duration: "", description: "" });
   };
-
+            ////handle change function ///
   const handleChange = (e) => {
     setNewWorkout({ ...newWorkout, [e.target.name]: e.target.value });
   };
-  //update a workout
+
+      ///////////////// Read //////////////////
+        //////// get workouts ///////
+  useEffect(() => {
+    async function getWorkouts() {
+      try {
+        let res = await axios.get(`http://localhost:3001/yourWorkouts`);
+        setWorkouts(res.data);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    getWorkouts();
+
+      ////////// get reviews ////////
+    async function getReviews() {
+      try {
+        let results = await axios.get(`http://localhost:3001/yourWorkouts/addComment`);
+        setReviews(results.data);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    getReviews();
+  }, []);
+
+    ////////////// Update /////////////
+      //////update a workout ///////
   const updateAWorkout = async (e) => {
     e.preventDefault();
-
     const updateWorkout = {
       ...selectedWorkout,
     };
-    console.log(updateWorkout, "update workout");
-    console.log(selectedWorkout._id, "here is the id");
     let updatedWorkout = await axios.put(
       `http://localhost:3001/yourWorkouts/${selectedWorkout._id}`,
       updateWorkout
@@ -96,12 +92,13 @@ function App() {
     workouts.splice(toChangeWorkout, 1, updateWorkout);
     setSelectedWorkout({ type: "", duration: "", description: "" });
   };
-
+        /// handle update ///
   const handleUpdate = (e) => {
     setSelectedWorkout({ ...selectedWorkout, [e.target.name]: e.target.value });
   };
-  // delete a workout
 
+  /////////////// Delete /////////////
+      ///// delete a workout ///////
   const deleteWorkout = async (workout) => {
     await axios
       .delete(`http://localhost:3001/yourWorkouts/${workout._id}`)

@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
+////////////// Profile component ////////////////
 const Profile = () => {
   let navigate = useNavigate();
 

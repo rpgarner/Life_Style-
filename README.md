@@ -1,5 +1,5 @@
 # Life_Style-
-This a full stack app that lets you plan out your life  work outs, diets, and goals.
+This is a full stack app that lets you plan out your life  work outs, diets, and goals.
  
  ![Lifestyle pic](https://vir.com.vn/stores/news_dataimages/hung/062020/23/06/1497p16-the-vital-pillars-for-a-healthy-lifestyle.jpg)
 ## Overview
@@ -39,9 +39,11 @@ see how we built this game, in our attached Trello board https://trello.com/b/1J
 - https://www.delish.com/cooking/g4798/easy-keto-diet-dinner-recipes/
 
 #### Tools used
--   Html, css, and java scripts 
--   Front end React
--   Back end express, node.js, mongodb, mongoose,  
+-   Html, css, and javaScript 
+-   React 
+-   express
+-   node.js
+-   mongodb and  mongoose,  
 
 
 ## Coming soon!

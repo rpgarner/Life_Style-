@@ -1,12 +1,15 @@
 import { useNavigate } from "react-router-dom";
 
+////////////// Update workout component ///////////
 const UpdateWorkout = (props) => {
   let navigate = useNavigate();
+  /////// on submit function ///////
   const submitData = (e) => {
     e.preventDefault();
     props.updateAWorkout(e);
     navigate("/yourWorkouts");
   };
+  
   return (
     <div className="pageTitle">
       <h2>update workout</h2>
