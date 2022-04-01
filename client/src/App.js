@@ -156,7 +156,9 @@ function App() {
           />
           <Route
             path="/yourWorkouts/addComment/:id"
-            element={<AddComment reviews={reviews} setReviews={setReviews} />}
+            element={<AddComment reviews={reviews} setReviews={setReviews} handleUpdate={handleUpdate}
+            updateAWorkout={updateAWorkout}
+            selectedWorkout={selectedWorkout} />}
           />
           <Route path="/yourDiets" element={<YourDiets />}/>
         </Routes>

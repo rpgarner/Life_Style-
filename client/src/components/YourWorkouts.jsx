@@ -11,7 +11,9 @@ const YourWorkouts = (props) => {
     navigate(`${workout._id}`);
   };
   const makeAComment = (workout) => {
+    props.setSelectedWorkout(workout);
     navigate(`/yourWorkouts/addComment/${workout._id}`);
+
   };
 
   console.log(props.reviews);
