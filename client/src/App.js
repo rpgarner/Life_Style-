@@ -107,6 +107,7 @@ function App() {
         /// handle update ///
   const handleUpdate = (e) => {
     setSelectedWorkout({ ...selectedWorkout, [e.target.name]: e.target.value });
+    
   };
 
   /////////////// Delete /////////////

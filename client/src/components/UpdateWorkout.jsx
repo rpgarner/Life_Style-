@@ -8,8 +8,9 @@ const UpdateWorkout = (props) => {
     e.preventDefault();
     props.updateAWorkout(e);
     navigate("/yourWorkouts");
+    window.location.reload()
   };
-  
+
   return (
     <div className="pageTitle">
       <h2>update workout</h2>

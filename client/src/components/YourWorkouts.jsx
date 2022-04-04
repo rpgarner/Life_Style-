@@ -10,6 +10,10 @@ const YourWorkouts = (props) => {
     props.setSelectedWorkout(workout);
     navigate(`${workout._id}`);
   };
+  let deleteWorkout = (workout) => {
+    props.deleteWorkout(workout) 
+    window.location.reload()
+  }
   ////////navigate to comment page///////
   const makeAComment = (workout) => {
     
@@ -26,7 +30,7 @@ const YourWorkouts = (props) => {
         {props.workouts.map((workout) => (
           <div key={workout._id} className="workouts">
             <button onClick={() => showWorkout(workout)}>Update Workout</button>
-            <button onClick={() => props.deleteWorkout(workout)}>Delete</button>
+            <button onClick={() => deleteWorkout(workout)}>Delete</button>
             <button onClick={() => makeAComment(workout)}>Add Comment</button>
             <div className="workout" key={workout._id}>
               <h2 className="workoutTitle">{workout.type}</h2>
