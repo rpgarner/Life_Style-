@@ -1,4 +1,4 @@
-const { Workout, Review, Diet } = require("../models");
+const { Workout, Review, Diet } = require("../models/index.js");
 
 ////////////////////////Create////////////////
         /////// Workout //////////
