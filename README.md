@@ -19,7 +19,7 @@ Starting with workouts the goal of this app is to help you organize workouts, di
 
 # Visit the page Here/ 
 
-  ![home page](https://ibb.co/Cnv7bcw)
+  ![home page](https://i.ibb.co/vJmP3Fc/Screen-Shot-2022-04-03-at-8-28-40-PM.png)
   
   ![Lets go](https://ibb.co/FnHGv1S)
 
