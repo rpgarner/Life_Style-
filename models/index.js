@@ -1,5 +1,5 @@
 const { model } = require("mongoose");
-const WorkoutSchema = require("./workout");
+const WorkoutSchema = require("./workout.js");
 const ReviewSchema = require("./review");
 const DietSchema = require("./diet");
 
