@@ -21,7 +21,7 @@ Starting with workouts the goal of this app is to help you organize workouts, di
 
   ![home page](https://i.ibb.co/vJmP3Fc/Screen-Shot-2022-04-03-at-8-28-40-PM.png)
   
-  ![Lets go](https://ibb.co/FnHGv1S)
+  ![Lets go](https://i.ibb.co/XVYmBPh/lifestyle1.png)
 
 ### Project build plan
 
