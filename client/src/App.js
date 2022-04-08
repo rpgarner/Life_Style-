@@ -38,7 +38,7 @@ function App() {
     };
 
     let response = await axios.post(
-      "http://localhost:3001/yourWorkouts/addWorkout",
+      "/yourWorkouts/addWorkout",
       createdWorkout
     );
     currentWorkouts.push(response.data);
@@ -55,7 +55,7 @@ function App() {
   useEffect(() => {
     async function getWorkouts() {
       try {
-        let res = await axios.get(`http://localhost:3001/yourWorkouts`);
+        let res = await axios.get(`/yourWorkouts`);
         
         setWorkouts(res.data);
       } catch (error) {
@@ -67,7 +67,7 @@ function App() {
       ////////// get reviews ////////
     async function getReviews() {
       try {
-        let results = await axios.get(`http://localhost:3001/yourWorkouts/addComment`);
+        let results = await axios.get(`/yourWorkouts/addComment`);
         setReviews(results.data);
       } catch (error) {
         console.log(error);
@@ -78,7 +78,7 @@ function App() {
       /////////// get reviews by Id ///////
       async function getReviewsById() {
         try {
-          let res = await axios.get(`http://localhost:3001/yourWorkouts/addComment/${selectedWorkout._id}`)
+          let res = await axios.get(`/yourWorkouts/addComment/${selectedWorkout._id}`)
           console.log(res, 'this is review by ID')
         } catch (error) {
           console.log(error);
@@ -95,7 +95,7 @@ function App() {
       ...selectedWorkout,
     };
     let updatedWorkout = await axios.put(
-      `http://localhost:3001/yourWorkouts/${selectedWorkout._id}`,
+      `/yourWorkouts/${selectedWorkout._id}`,
       updateWorkout
     );
     const toChangeWorkout = workouts.find(
@@ -114,7 +114,7 @@ function App() {
       ///// delete a workout ///////
   const deleteWorkout = async (workout) => {
     await axios
-      .delete(`http://localhost:3001/yourWorkouts/${workout._id}`)
+      .delete(`/yourWorkouts/${workout._id}`)
       .then((respond) => {
         console.log(respond);
       })

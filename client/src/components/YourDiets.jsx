@@ -13,7 +13,7 @@ const YourDiets = (props) => {
   useEffect(() => {
     async function getDiets() {
       try {
-        let res = await axios.get(`http://localhost:3001/yourDiets`);
+        let res = await axios.get(`/yourDiets`);
         setDiets(res.data);
       } catch (error) {
         console.log(error);
