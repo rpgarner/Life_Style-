@@ -1,14 +1,15 @@
 const { model } = require("mongoose");
-// const WorkoutSchema = require("./workout")
 const ReviewSchema = require("./review");
 const DietSchema = require("./diet");
+const WorkoutSchema =require("./workout")
 
-// const Workout = model("Workout", WorkoutSchema);
+
 const Review = model("Review", ReviewSchema);
 const Diet = model("Diet", DietSchema);
+const Workout = model("Workout", WorkoutSchema);
 
 module.exports = {
-//   Workout,
   Review,
   Diet,
+  Workout
 };

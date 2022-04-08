@@ -1,5 +1,5 @@
-const { Review, Diet } = require("../models/index.js");
-const  Workout = require("../models/workout")
+const { Review, Diet, Workout } = require("../models/index.js");
+
 
 ////////////////////////Create////////////////
         /////// Workout //////////
