@@ -1,4 +1,4 @@
-import { Review, Diet, Exercise } from "../models/index.js";
+const { Review, Diet, Exercise } = require("../models/index.js");
 
 
 ////////////////////////Create////////////////
@@ -68,7 +68,7 @@ const deleteWorkout = async (req, res) => {
   res.status(200).send(deletedWorkout);
 };
 
-export default {
+module.exports = {
   getWorkouts,
   addWorkout,
   getReviews,
