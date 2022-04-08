@@ -1,6 +1,6 @@
 const { Schema } = require("mongoose");
 
-const Workout = new Schema(
+const Exercise = new Schema(
   {
     type: { type: String, required: true },
     duration: { type: String, required: true },
@@ -10,4 +10,4 @@ const Workout = new Schema(
   { timestamps: true }
 );
 
-module.exports = Workout;
+module.exports = Exercise;

@@ -1,16 +1,16 @@
-const { Review, Diet, Workout } = require("../models/index.js");
+import { Review, Diet, Exercise } from "../models/index.js";
 
 
 ////////////////////////Create////////////////
-        /////// Workout //////////
+        /////// Exercise //////////
 const addWorkout = async (req, res) => {
-  let newWorkout = await Workout.create(req.body);
+  let newWorkout = await Exercise.create(req.body);
   await res.json(newWorkout);
 };
         ////////Review/Comment//////////
 const postAComment = async (req, res) => {
   let { id } = req.params;
-  let foundWorkout = await Workout.findById(id);
+  let foundWorkout = await Exercise.findById(id);
   let createdReview = await Review.create(req.body);
   foundWorkout.reviews.push(createdReview);
   foundWorkout.save();
@@ -20,7 +20,7 @@ const postAComment = async (req, res) => {
 ///////////////// read //////////////////////////
         ///// get workouts ///////
 const getWorkouts = async (req, res) => {
-  let workouts = await Workout.find({});
+  let workouts = await Exercise.find({});
   res.json(workouts);
 };
         //////// get reviews //////
@@ -35,13 +35,13 @@ const getDiets = async (req, res) => {
 };
         //////// get workouts for comments ///////
 const getWorkoutsForComment = async (req, res) => {
-  let workouts = await Workout.find({});
+  let workouts = await Exercise.find({});
   res.json(workouts);
 };
         /////// get workout by ID to populate ////////
 const getWorkoutbyID = async (req, res) => {
   let { id } = req.params;
-  let foundWorkout = await Workout.findById(id).populate("reviews");
+  let foundWorkout = await Exercise.findById(id).populate("reviews");
   res.json(foundWorkout);
 };
          /////// get review by ID ////////  
@@ -56,7 +56,7 @@ const getReviewsById = async (req, res) => {
     ////////// put workout/////////
 const updateWorkout = async (req, res) => {
   let { id } = req.params;
-  let foundWorkout = await Workout.findByIdAndUpdate(id, req.body, {
+  let foundWorkout = await Exercise.findByIdAndUpdate(id, req.body, {
     new: true,
   });
   res.send(foundWorkout);
@@ -64,11 +64,11 @@ const updateWorkout = async (req, res) => {
 //////////////////// Delete //////////////////////
 const deleteWorkout = async (req, res) => {
   let { id } = req.params;
-  let deletedWorkout = await Workout.findByIdAndDelete(id);
+  let deletedWorkout = await Exercise.findByIdAndDelete(id);
   res.status(200).send(deletedWorkout);
 };
 
-module.exports = {
+export default {
   getWorkouts,
   addWorkout,
   getReviews,
