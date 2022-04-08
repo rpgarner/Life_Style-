@@ -17,12 +17,12 @@ const YourWorkouts = (props) => {
   ////////navigate to comment page///////
   const makeAComment = (workout) => {
     
-    navigate(`/yourWorkouts/addComment/${workout._id}`);
+    navigate(`/yourWorkout/addComments/${workout._id}`);
   };
 
   return (
     <div className="workoutsTitle">
-      <button onClick={() => navigate("/yourWorkouts/addWorkout")}>
+      <button onClick={() => navigate("/yourWorkout/addWorkouts")}>
         Add Workout
       </button>
       <h1>Workouts</h1>

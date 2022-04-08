@@ -134,7 +134,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/profile" element={<Profile />} />
           <Route
-            path="/yourWorkouts"
+            path="/yourWorkout"
             element={
               <YourWorkouts
                 workouts={workouts}
@@ -146,7 +146,7 @@ function App() {
             }
           />
           <Route
-            path="/yourWorkouts/:id"
+            path="/yourWorkout/:id"
             element={
               <UpdateWorkout
                 handleUpdate={handleUpdate}
@@ -156,7 +156,7 @@ function App() {
             }
           />
           <Route
-            path="/yourWorkouts/addWorkout"
+            path="/yourWorkout/addWorkouts"
             element={
               <AddWorkout
                 newWorkout={newWorkout}
@@ -166,12 +166,12 @@ function App() {
             }
           />
           <Route
-            path="/yourWorkouts/addComment/:id"
+            path="/yourWorkout/addComments/:id"
             element={<AddComment reviews={reviews}  handleUpdate={handleUpdate}
             updateAWorkout={updateAWorkout}
             selectedWorkout={selectedWorkout} />}
           />
-          <Route path="/yourDiets" element={<YourDiets />}/>
+          <Route path="/yourDiet" element={<YourDiets />}/>
         </Routes>
       </main>
     </div>

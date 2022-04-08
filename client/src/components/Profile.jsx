@@ -9,14 +9,14 @@ const Profile = () => {
     <div className="profilePage">
       <h1 className="homePage">Profile</h1>
       <div className="profileArticles">
-        <div className="article" onClick={() => navigate("/yourWorkouts")}>
+        <div className="article" onClick={() => navigate("/yourWorkout")}>
           <h3>Workouts</h3>
           <img
             src="https://thumbs.dreamstime.com/b/morning-workout-routine-home-gym-morning-workout-routine-home-gym-fitness-motivation-muscle-training-concept-man-122902002.jpg"
             alt="workout"
           ></img>
         </div>
-        <div className="article" onClick={() => navigate('/yourDiets')}>
+        <div className="article" onClick={() => navigate('/yourDiet')}>
           <h3>Diets</h3>
           <img
             src="https://cdn.cancercenter.com/-/media/ctca/images/others/blogs/2019/06-june/02-blog-healthy-food-l.jpg"

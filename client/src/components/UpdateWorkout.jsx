@@ -7,7 +7,7 @@ const UpdateWorkout = (props) => {
   const submitData = (e) => {
     e.preventDefault();
     props.updateAWorkout(e);
-    navigate("/yourWorkouts");
+    navigate("/yourWorkout");
     window.location.reload()
   };
 
@@ -40,7 +40,7 @@ const UpdateWorkout = (props) => {
           <button>Submit</button>
         </form>
       </div>
-      <button onClick={() => navigate('/yourWorkouts')}>Back</button>
+      <button onClick={() => navigate('/yourWorkout')}>Back</button>
     </div>
   );
 

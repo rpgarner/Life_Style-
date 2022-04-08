@@ -25,7 +25,7 @@ const AddComment = (props) => {
         ))}
       </div>
 
-      <button onClick={() => navigate("/yourWorkouts")}>Back</button>
+      <button onClick={() => navigate("/yourWorkout")}>Back</button>
     </div>
   );
 };

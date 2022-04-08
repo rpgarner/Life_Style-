@@ -8,9 +8,9 @@ const AddWorkout = (props) => {
   const submitData = (e) => {
     e.preventDefault();
     props.addNewWorkout(e);
-    navigate("/yourWorkouts");
+    navigate("/yourWorkout");
   };
-  
+
   return (
     <div className="pageTitle">
       <h3>Create workout page</h3>
@@ -39,7 +39,7 @@ const AddWorkout = (props) => {
           </input>
         <button>Submit</button>
       </form>
-      <button onClick={() => navigate('/yourWorkouts')}>Back</button>
+      <button onClick={() => navigate('/yourWorkout')}>Back</button>
     </div>
   );
 };
