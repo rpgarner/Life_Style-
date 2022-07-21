@@ -24,12 +24,8 @@ const Home = () => {
         </p>
       </div>
       <div className="homePage">
-        <p>Log in or create a profile</p>
-        <form>
-          <input type="text" name={"login"} placeholder={"User Name"} />
-          <input type="text" name={"password"} placeholder={"password"} />
-          <button onClick={() => navigate("/Profile")}>Submit</button>
-        </form>
+        <p>Let's change our life Style</p>
+          <button onClick={() => navigate("/Profile")}>Enter</button>
       </div>
     </div>
   );

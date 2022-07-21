@@ -33,6 +33,7 @@ header {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
+  background-image: url();
 }
 button {
   width: 120px;
